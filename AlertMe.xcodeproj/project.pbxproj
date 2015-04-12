@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3055661AD3408E0070CDAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D3055651AD3408E0070CDAC /* Main.storyboard */; };
+		1D6068301ACE7AFB008A6B58 /* LocationAlarmTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D60682F1ACE7AFB008A6B58 /* LocationAlarmTableTableViewController.m */; };
+		1DB0E23F1ACFB1170098C01C /* AddAlarmEntryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0E23E1ACFB1170098C01C /* AddAlarmEntryTableViewController.m */; };
+		1DB0E2881AD26B1A0098C01C /* SnoozeAlarmAttributesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0E2871AD26B1A0098C01C /* SnoozeAlarmAttributesTableViewController.m */; };
 		1DDDA4851ACE6F7C00BB818B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDA4841ACE6F7C00BB818B /* main.m */; };
 		1DDDA4881ACE6F7C00BB818B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDA4871ACE6F7C00BB818B /* AppDelegate.m */; };
-		1DDDA48B1ACE6F7C00BB818B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDA48A1ACE6F7C00BB818B /* ViewController.m */; };
-		1DDDA48E1ACE6F7C00BB818B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DDDA48C1ACE6F7C00BB818B /* Main.storyboard */; };
 		1DDDA4901ACE6F7C00BB818B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DDDA48F1ACE6F7C00BB818B /* Images.xcassets */; };
 		1DDDA4931ACE6F7C00BB818B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDDA4911ACE6F7C00BB818B /* LaunchScreen.xib */; };
 		1DDDA49F1ACE6F7C00BB818B /* AlertMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDA49E1ACE6F7C00BB818B /* AlertMeTests.m */; };
+		1DDDA4AA1ACE701200BB818B /* AlertMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDA4A91ACE701200BB818B /* AlertMeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +30,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D3055651AD3408E0070CDAC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1D60682E1ACE7AFB008A6B58 /* LocationAlarmTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAlarmTableTableViewController.h; sourceTree = "<group>"; };
+		1D60682F1ACE7AFB008A6B58 /* LocationAlarmTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAlarmTableTableViewController.m; sourceTree = "<group>"; };
+		1DB0E23D1ACFB1170098C01C /* AddAlarmEntryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmEntryTableViewController.h; sourceTree = "<group>"; };
+		1DB0E23E1ACFB1170098C01C /* AddAlarmEntryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmEntryTableViewController.m; sourceTree = "<group>"; };
+		1DB0E2861AD26B1A0098C01C /* SnoozeAlarmAttributesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnoozeAlarmAttributesTableViewController.h; sourceTree = "<group>"; };
+		1DB0E2871AD26B1A0098C01C /* SnoozeAlarmAttributesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnoozeAlarmAttributesTableViewController.m; sourceTree = "<group>"; };
 		1DDDA47F1ACE6F7C00BB818B /* AlertMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlertMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDDA4831ACE6F7C00BB818B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DDDA4841ACE6F7C00BB818B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DDDA4861ACE6F7C00BB818B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1DDDA4871ACE6F7C00BB818B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1DDDA4891ACE6F7C00BB818B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1DDDA48A1ACE6F7C00BB818B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1DDDA48D1ACE6F7C00BB818B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DDDA48F1ACE6F7C00BB818B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1DDDA4921ACE6F7C00BB818B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1DDDA4981ACE6F7C00BB818B /* AlertMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlertMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDDA49D1ACE6F7C00BB818B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DDDA49E1ACE6F7C00BB818B /* AlertMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertMeTests.m; sourceTree = "<group>"; };
+		1DDDA4A81ACE701200BB818B /* AlertMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMeViewController.h; sourceTree = "<group>"; };
+		1DDDA4A91ACE701200BB818B /* AlertMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +92,15 @@
 			children = (
 				1DDDA4861ACE6F7C00BB818B /* AppDelegate.h */,
 				1DDDA4871ACE6F7C00BB818B /* AppDelegate.m */,
-				1DDDA4891ACE6F7C00BB818B /* ViewController.h */,
-				1DDDA48A1ACE6F7C00BB818B /* ViewController.m */,
-				1DDDA48C1ACE6F7C00BB818B /* Main.storyboard */,
+				1DDDA4A81ACE701200BB818B /* AlertMeViewController.h */,
+				1D3055651AD3408E0070CDAC /* Main.storyboard */,
+				1DDDA4A91ACE701200BB818B /* AlertMeViewController.m */,
+				1DB0E23D1ACFB1170098C01C /* AddAlarmEntryTableViewController.h */,
+				1DB0E23E1ACFB1170098C01C /* AddAlarmEntryTableViewController.m */,
+				1DB0E2861AD26B1A0098C01C /* SnoozeAlarmAttributesTableViewController.h */,
+				1DB0E2871AD26B1A0098C01C /* SnoozeAlarmAttributesTableViewController.m */,
+				1D60682E1ACE7AFB008A6B58 /* LocationAlarmTableTableViewController.h */,
+				1D60682F1ACE7AFB008A6B58 /* LocationAlarmTableTableViewController.m */,
 				1DDDA48F1ACE6F7C00BB818B /* Images.xcassets */,
 				1DDDA4911ACE6F7C00BB818B /* LaunchScreen.xib */,
 				1DDDA4821ACE6F7C00BB818B /* Supporting Files */,
@@ -199,7 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DDDA48E1ACE6F7C00BB818B /* Main.storyboard in Resources */,
+				1D3055661AD3408E0070CDAC /* Main.storyboard in Resources */,
 				1DDDA4931ACE6F7C00BB818B /* LaunchScreen.xib in Resources */,
 				1DDDA4901ACE6F7C00BB818B /* Images.xcassets in Resources */,
 			);
@@ -219,9 +234,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DDDA48B1ACE6F7C00BB818B /* ViewController.m in Sources */,
+				1DB0E2881AD26B1A0098C01C /* SnoozeAlarmAttributesTableViewController.m in Sources */,
+				1DB0E23F1ACFB1170098C01C /* AddAlarmEntryTableViewController.m in Sources */,
 				1DDDA4881ACE6F7C00BB818B /* AppDelegate.m in Sources */,
 				1DDDA4851ACE6F7C00BB818B /* main.m in Sources */,
+				1DDDA4AA1ACE701200BB818B /* AlertMeViewController.m in Sources */,
+				1D6068301ACE7AFB008A6B58 /* LocationAlarmTableTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +262,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1DDDA48C1ACE6F7C00BB818B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1DDDA48D1ACE6F7C00BB818B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1DDDA4911ACE6F7C00BB818B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -412,6 +422,7 @@
 				1DDDA4A41ACE6F7C00BB818B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1DDDA4A51ACE6F7C00BB818B /* Build configuration list for PBXNativeTarget "AlertMeTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +431,7 @@
 				1DDDA4A71ACE6F7C00BB818B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
