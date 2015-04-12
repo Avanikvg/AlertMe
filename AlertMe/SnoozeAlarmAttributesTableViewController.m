@@ -7,6 +7,8 @@
 //
 
 #import "SnoozeAlarmAttributesTableViewController.h"
+#import <UIKit/UIKit.h>
+
 #define SUNDAY "Sunday"
 #define MONDAY "Monday"
 #define TUESDAY "Tuesday"
@@ -37,6 +39,8 @@ BOOL multipleSelection = @"NO";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.backgroundColor = [UIColor redColor];
     
     snoozeArray = [[NSArray alloc]initWithObjects:@ONE,@THREE,@FIVE,@TEN,nil] ;
     
