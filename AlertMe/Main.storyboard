@@ -203,9 +203,9 @@
                                                     <exclude reference="sFQ-oP-sMN"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="mvt-74-P3n"/>
-                                                    <exclude reference="g1L-Tc-TAz"/>
                                                     <exclude reference="eND-oO-3qj"/>
+                                                    <exclude reference="g1L-Tc-TAz"/>
+                                                    <exclude reference="mvt-74-P3n"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -213,9 +213,9 @@
                                                     <include reference="sFQ-oP-sMN"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="mvt-74-P3n"/>
-                                                    <include reference="g1L-Tc-TAz"/>
                                                     <include reference="eND-oO-3qj"/>
+                                                    <include reference="g1L-Tc-TAz"/>
+                                                    <include reference="mvt-74-P3n"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -266,14 +266,14 @@
                     <navigationItem key="navigationItem" id="19b-vB-Knu">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="saE-iO-Lt4">
                             <connections>
-                                <action selector="saveAlarmAttributes:" destination="FYx-ky-mCg" id="MKm-X8-Rmo"/>
+                                <action selector="saveSettings:" destination="FYx-ky-mCg" id="OHP-oV-Zfc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txO-g3-tih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357" y="-687"/>
+            <point key="canvasLocation" x="269" y="-765"/>
         </scene>
         <!--Settings-->
         <scene sceneID="I4f-YO-nhX">

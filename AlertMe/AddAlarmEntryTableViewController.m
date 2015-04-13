@@ -26,6 +26,8 @@ NSArray *alarmAttributesArray;
 
 @implementation AddAlarmEntryTableViewController
 
+@synthesize alarmLabel,selectionRepeats,snoozeInterval;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -40,6 +42,13 @@ NSArray *alarmAttributesArray;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    NSLog(@" alarm label : %@",    self.alarmLabel);
+    NSLog(@" selection repeats array count  = %lu",[selectionRepeats count]);
+    NSLog(@" snooze interval = %lu",[self.snoozeInterval intValue]);
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -68,9 +77,10 @@ NSArray *alarmAttributesArray;
         
         destinationTVC.selectionString=@"Repeat";
         destinationTVC.title =destinationTVC.selectionString;
+        [destinationTVC setDelegate:self];
 
     }
-    
+    else
     if([segue.identifier isEqualToString:@"SnoozeSegueId"])
     {
         //  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -85,10 +95,43 @@ NSArray *alarmAttributesArray;
         destinationTVC.title =destinationTVC.selectionString;
 
       //  NSLog(@"selected number of rows : %lu",destinationTVC.);
+        [destinationTVC setDelegate:self];
+    }
+    else
+    if([segue.identifier isEqualToString:@"LabelSegueId"])
+    {
+        UINavigationController *navController = (UINavigationController*)[segue destinationViewController];
+        SnoozeAlarmAttributesTableViewController *destinationTVC=(SnoozeAlarmAttributesTableViewController*)[navController topViewController];
+        
+        destinationTVC.selectionString=@"Label";
+        destinationTVC.title =destinationTVC.selectionString;
+        
+        //  NSLog(@"selected number of rows : %lu",destinationTVC.);
+        [destinationTVC setDelegate:self];
     }
     
 
 }
 
+#pragma mark - 
+#pragma mark - Protocol Methods
+
+-(void) setSnoozeLabel:(NSString *)snoozeLabel
+{
+
+   alarmLabel=snoozeLabel;
+    
+}
+
+-(void) setSelectionRepeats:(NSMutableArray *)selectionRepeatsArray
+{
+     selectionRepeats=selectionRepeatsArray;
+}
+
+-(void) setSelectionSnoozeInterval:(NSNumber *)snoozeIntervalPassed
+{
+    snoozeInterval=snoozeIntervalPassed;
+    
+}
 
 @end

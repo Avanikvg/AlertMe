@@ -24,7 +24,7 @@
 
 @interface SnoozeAlarmAttributesTableViewController ()
 
-@property(assign,nonatomic) NSUInteger selectedSnooze;
+@property(strong,nonatomic) NSNumber* selectedSnooze;
 @property(readonly, copy) NSIndexSet *selectedRowIndexes;
 
 @end
@@ -32,19 +32,22 @@
 
 @implementation SnoozeAlarmAttributesTableViewController
 
+@synthesize delegate,snoozeLabel;
+//@synthesize passedMessage;
+@synthesize labelTextField,selectionRepeatsArray,snoozeInterval;
+
 NSArray *snoozeArray,*repeatArray;
-
-
-BOOL multipleSelection = @"NO";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundColor = [UIColor redColor];
-    
     snoozeArray = [[NSArray alloc]initWithObjects:@ONE,@THREE,@FIVE,@TEN,nil] ;
     
     repeatArray = [[NSArray alloc]initWithObjects:@SUNDAY,@MONDAY,@TUESDAY,@WEDNESDAY,@THURSDAY,@FRIDAY,@SATURDAY,nil];
+    
+    [self.tableView setTableFooterView:[UIView new] ];
+    
+    selectionRepeatsArray = [[NSMutableArray alloc]init];
     
         //[self.tableView registerNib:[UINib nibWithNibName:@"SnoozeAlarmAttributesTableViewController" bundle:nil] forCellReuseIdentifier:@"SnoozeAlarmIdentifier"];
     
@@ -94,11 +97,7 @@ BOOL multipleSelection = @"NO";
 static NSString *cellReuseIdentifier =@"reuseIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    NSLog(@" inside cell row for index path");
 
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier forIndexPath:indexPath];
     
     if(!cell) {
@@ -118,8 +117,16 @@ static NSString *cellReuseIdentifier =@"reuseIdentifier";
 
     else
         if([_selectionString isEqualToString:@"Label"])
-            cell.textLabel.text =@"Enter the label";
-    
+        {
+            labelTextField = [[UITextField alloc]initWithFrame: CGRectMake(self.tableView.bounds.size.width/3, self.tableView.bounds.size.height/3, 40, 20)];
+            
+            labelTextField.placeholder=@"enter the label";
+            labelTextField.borderStyle=UITextBorderStyleRoundedRect;
+            
+            [self.tableView addSubview:labelTextField];
+            self.tableView.rowHeight = self.tableView.bounds.size.height;
+            
+        }
     return cell;
     
 }
@@ -172,7 +179,7 @@ static NSString *cellReuseIdentifier =@"reuseIdentifier";
 }
 */
 
-
+/*
 - (NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     for ( NSIndexPath* selectedIndexPath in tableView.indexPathsForSelectedRows ) {
         if ( selectedIndexPath.section == indexPath.section )
@@ -181,6 +188,7 @@ static NSString *cellReuseIdentifier =@"reuseIdentifier";
     return indexPath ;
 }
 
+*/
 - (void)tableView:(UITableView *)theTableView
 didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath {
     
@@ -199,38 +207,63 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath {
              }
              UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:newIndexPath];
              cell.accessoryType = UITableViewCellAccessoryCheckmark;
-             self.selectedSnooze = newIndexPath.row;
+             self.selectedSnooze = [NSNumber numberWithInteger:newIndexPath.row];
          }
         [self.tableView deselectRowAtIndexPath:newIndexPath animated:YES];
+        
+        snoozeInterval = self.selectedSnooze;
     }
     
-    else
+    else if ([_selectionString isEqualToString:@"Repeat"])
     {
         
         [theTableView deselectRowAtIndexPath:[theTableView indexPathForSelectedRow] animated:NO];
         
-        //Multiple selection is allowed
-        
         UITableViewCell *cell = [theTableView cellForRowAtIndexPath:newIndexPath];
+        
+        [selectionRepeatsArray addObject:newIndexPath];
+        
+        
+        NSLog(@" count in selected day =  %@ ",cell.textLabel.text);
         
         if (cell.accessoryType == UITableViewCellAccessoryNone)
         {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
             
         }
-        else if
-            (cell.accessoryType == UITableViewCellAccessoryCheckmark)
+        else
+        if (cell.accessoryType == UITableViewCellAccessoryCheckmark)
         {
             cell.accessoryType = UITableViewCellAccessoryNone;
-
         }
     
     }
 }
 
-- (IBAction)saveAlarmAttributes:(UIBarButtonItem *)sender {
+
+- (IBAction)saveSettings:(UIBarButtonItem *)sender {
     
-    NSLog(@" inside save method : %lu",self.selectedRowIndexes.count );
+   // [self dismissViewControllerAnimated:YES completion:nil];
+
+    if ([_selectionString isEqualToString:@"Label"])
+    {
+        snoozeLabel = labelTextField.text;
+        [[self delegate ] setSnoozeLabel:snoozeLabel];
+    }
+    else if ([_selectionString isEqualToString:@"Snooze"])
+    {
+        NSLog(@"inside the snooze interval %@",snoozeInterval);
+        [[self delegate] setSelectionSnoozeInterval:snoozeInterval];
+    }
+    else if ([_selectionString isEqualToString:@"Repeat"])
+    {
+        NSLog(@"inside the save settings snooze delegate");
+        [[self delegate] setSelectionRepeats: selectionRepeatsArray];
+    }
+
+    NSLog(@" inside save method : %lu",[selectionRepeatsArray count] );
+    //[self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end
