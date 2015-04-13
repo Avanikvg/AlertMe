@@ -13,16 +13,28 @@
 #define SECOND_ATTRIBUTE "Repeat"
 #define THIRD_ATTRIBUTE "Label"
 
+#define ONE "1"
+#define THREE "3"
+#define FIVE "5"
+#define TEN "10"
+
+#define SUNDAY "Sunday"
+#define MONDAY "Monday"
+#define TUESDAY "Tuesday"
+#define WEDNESDAY "Wednesday"
+#define THURSDAY "Thursday"
+#define FRIDAY "Friday"
+#define SATURDAY "Saturday"
 
 
 @interface AddAlarmEntryTableViewController ()
 
 @end
 
-NSInteger *selectedINdex;
 
 NSArray *alarmAttributesArray;
 
+NSArray *snoozeArray,*repeatArray;
 
 @implementation AddAlarmEntryTableViewController
 
@@ -32,21 +44,19 @@ NSArray *alarmAttributesArray;
     [super viewDidLoad];
     
     alarmAttributesArray=[[NSArray alloc]initWithObjects:@FIRST_ATTRIBUTE,@SECOND_ATTRIBUTE, @THIRD_ATTRIBUTE,nil];
+    repeatArray = [[NSArray alloc]initWithObjects:@SUNDAY,@MONDAY,@TUESDAY,@WEDNESDAY,@THURSDAY,@FRIDAY,@SATURDAY,nil];
    
     _alarmStartDateTime.minimumDate = _alarmStartDateTime.date;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    snoozeArray = [[NSArray alloc]initWithObjects:@ONE,@THREE,@FIVE,@TEN,nil] ;
+
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     NSLog(@" alarm label : %@",    self.alarmLabel);
     NSLog(@" selection repeats array count  = %lu",[selectionRepeats count]);
-    NSLog(@" snooze interval = %lu",[self.snoozeInterval intValue]);
+    NSLog(@" snooze interval = %d",[self.snoozeInterval intValue]);
 
 }
 - (void)didReceiveMemoryWarning {
@@ -76,6 +86,7 @@ NSArray *alarmAttributesArray;
         
         
         destinationTVC.selectionString=@"Repeat";
+        destinationTVC.repeatArray = repeatArray;
         destinationTVC.title =destinationTVC.selectionString;
         [destinationTVC setDelegate:self];
 
@@ -92,6 +103,7 @@ NSArray *alarmAttributesArray;
         SnoozeAlarmAttributesTableViewController *destinationTVC=(SnoozeAlarmAttributesTableViewController*)[navController topViewController];
         
         destinationTVC.selectionString=@"Snooze";
+        destinationTVC.snoozeArray = snoozeArray;
         destinationTVC.title =destinationTVC.selectionString;
 
       //  NSLog(@"selected number of rows : %lu",destinationTVC.);
@@ -118,9 +130,7 @@ NSArray *alarmAttributesArray;
 
 -(void) setSnoozeLabel:(NSString *)snoozeLabel
 {
-
-   alarmLabel=snoozeLabel;
-    
+   alarmLabel=snoozeLabel;    
 }
 
 -(void) setSelectionRepeats:(NSMutableArray *)selectionRepeatsArray

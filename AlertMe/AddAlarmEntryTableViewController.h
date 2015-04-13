@@ -16,4 +16,5 @@
 @property (strong,nonatomic) NSMutableArray *selectionRepeats;
 @property (strong,nonatomic) NSNumber *snoozeInterval;
 
+
 @end

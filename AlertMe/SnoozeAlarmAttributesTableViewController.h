@@ -28,6 +28,9 @@
 
 
 @property   (nonatomic,strong) NSString *selectionString;
+@property (nonatomic,strong) NSArray *snoozeArray;
+@property (nonatomic,strong) NSArray *repeatArray;
+
 //- (IBAction)Cancel:(UIBarButtonItem *)sender;
 ;
 

@@ -9,18 +9,9 @@
 #import "SnoozeAlarmAttributesTableViewController.h"
 #import <UIKit/UIKit.h>
 
-#define SUNDAY "Sunday"
-#define MONDAY "Monday"
-#define TUESDAY "Tuesday"
-#define WEDNESDAY "Wednesday"
-#define THURSDAY "Thursday"
-#define FRIDAY "Friday"
-#define SATURDAY "Saturday"
 
-#define ONE "1"
-#define THREE "3"
-#define FIVE "5"
-#define TEN "10"
+
+
 
 @interface SnoozeAlarmAttributesTableViewController ()
 
@@ -36,29 +27,16 @@
 //@synthesize passedMessage;
 @synthesize labelTextField,selectionRepeatsArray,snoozeInterval;
 
-NSArray *snoozeArray,*repeatArray;
+
+@synthesize snoozeArray,repeatArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    snoozeArray = [[NSArray alloc]initWithObjects:@ONE,@THREE,@FIVE,@TEN,nil] ;
-    
-    repeatArray = [[NSArray alloc]initWithObjects:@SUNDAY,@MONDAY,@TUESDAY,@WEDNESDAY,@THURSDAY,@FRIDAY,@SATURDAY,nil];
-    
     [self.tableView setTableFooterView:[UIView new] ];
     
     selectionRepeatsArray = [[NSMutableArray alloc]init];
-    
-        //[self.tableView registerNib:[UINib nibWithNibName:@"SnoozeAlarmAttributesTableViewController" bundle:nil] forCellReuseIdentifier:@"SnoozeAlarmIdentifier"];
-    
-   // [[SnoozeAlarmAttributesTableViewController alloc] initWithNibName:@"SnoozeAlarmAttributesTableViewController" bundle:nil];
 
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,13 +45,6 @@ NSArray *snoozeArray,*repeatArray;
 }
 
 #pragma mark - Table view data source
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    // Return the number of sections.
-    return 0;
-}
-*/
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
